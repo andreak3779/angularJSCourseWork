@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to angularJS</title>
+	<meta name="Author" content=""/>
+	
+</head>
+<body>
+    <h1> Hello {{1 + 2}}rd time AngularJS</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+</script>
+
+    <script>
+        angular.module('notesApp',[]);
+        angular.element(document).ready(function() {
+            angular.bootstrap(document,['notesApp']);
+        });
+    </script>
+</body>
+</html>

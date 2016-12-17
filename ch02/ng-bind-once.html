@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <title>Notes App</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Example code">
+    <meta name="keywords" content="angularjs">
+</head>
+<body ng-controller="MainCtrl as ctrl">
+    <button ng-click="ctrl.changeMe()">Change</button>
+    <div ng-repeat="note in ctrl.notes">
+        Without Bind Once: <div class="label" ng-bind="note.label"></div>
+        With Bind Once: <div class="label" ng-bind="::note.label"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
+    <script>
+        angular.module('notesApp',[])
+        .controller('MainCtrl',[function() {
+        var self= this;
+        self.notes = [
+            {id: 1, label: 'First Note', done:false},
+            {id: 2, label: 'Second Note', done:false},
+            {id:3, label: 'Done Note', done: true},
+            {id:4, label: 'Last Note', done:false}
+        ];
+        self.changeMe = function() {
+            self.notes[1].label = 'Changed Note';
+        };
+        }]);
+    </script>
+</body>
+</html>

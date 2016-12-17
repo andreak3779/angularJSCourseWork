@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="" ng-app="notesApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello AngularJS</title>
+	<meta name="Author" content=""/>
+    </head>
+<body ng-controller="MainCtrl">
+    Hello {{1 + 3 }}th time AngularJS
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+</script>
+<script>
+angular.module('notesApp',[])
+    .controller('MainCtrl',[function() {
+        //Controller code goes here..
+        console.log("Inside the MainCtrl.")
+    }]);
+</script>
+</body>
+</html>
