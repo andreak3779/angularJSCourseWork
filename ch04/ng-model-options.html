@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="modelApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ng Model Options</title>
+</head>
+
+<body ng-contoller="MainCtrl as ctrl">
+    <div>
+        <input type="text" ng-model="ctrl.withoutModelOptions" ng-minlength="5" /> You typed {{ctrl.withoutModelOptions}}
+    </div>
+    <div>
+        <input type="text" ng-model="ctrl.withModelOptions" ng-model-options="ctrl.modelOptions" ng-minlength="5" /> You typed {{ctrl.withModelOptions()}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
+    <script>
+        angular.module('modelApp', [])
+            .controller('MainCtrl', [function() {
+                this.withoutModelOptions = '';
+                var _localVar = '';
+                this.modelOptions = {
+                    updateOn: 'default blur',
+                    debounce: {
+                        default: 1000,
+                        blur: 0
+                    },
+                    getterSetter: true,
+                    allowInvalid: true
+                };
+                this.withModelOptions = function(txt) {
+                    if (angular.isDefined(txt)) {
+                        _localVar = txt;
+                    } else {
+                        return _localVar;
+                    }
+                };
+            }]);
+    </script>
+</body>
+
+</html>

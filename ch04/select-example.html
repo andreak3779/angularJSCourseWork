@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="notesApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App - select-example</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+    <div>
+        <h2>What is your favourite makeup brand?</h2>
+        <div ng-repeat="brand in ctrl.brands">
+            <label ng-bind="brand.label"></label>
+            <div>
+                With Binding:
+                <input type="checkbox" ng-model="brand.selected" ng-true-value="'YUP'" ng-false-value="'NOPE'">
+            </div>
+            <div>
+                Using ng-checked:
+                <input type="checkbox" ng-checked="brand.selected === 'YUP'">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function() {
+                var self = this;
+                self.brands = [{
+                    label: 'Cover Girl',
+                    selected: 'NOPE'
+                }, {
+                    label: 'MAC',
+                    selected: 'YUP'
+                }, {
+                    label: 'LOreal',
+                    selected: 'NOPE'
+                }, {
+                    label: 'Smash Box',
+                    selected: 'NOPE'
+                }];
+            }]);
+    </script>
+</body>
+
+</html>
