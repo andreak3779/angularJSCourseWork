@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h3>Radio Buttons</h3>
+        <div ng-init="user= {gender: 'female'}">
+            <input type="radio" name="gender" ng-model="user.gender" value="male">
+            <input type="radio" name="gender" ng-model="user.gender" value="female">
+        </div>
+        <div ng-init="otherGender='other'">
+            <input type="radio" name="gender" ng-model="user.gender" value="male">Male
+            <input type="radio" name="gender" ng-model="user.gender" value="female">Female
+            <input type="radio" name="gender" ng-model="user.gender" ng-value="otherGender">{{otherGender}}
+        </div>
+        <div ng-init="location = 'India'">
+            <select ng-model="location">
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="Other">None of the above</option>
+            </select>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+        </script>
+</body>
+
+</html>
