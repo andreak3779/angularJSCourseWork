@@ -10,6 +10,7 @@ function ItemService() {
         items.push(item);
     };
 }
+
 angular.module('notesApp', [])
     .service('ItemService', [ItemService])
     .controller('MainCtrl', [function() {

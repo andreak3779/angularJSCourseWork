@@ -8,6 +8,7 @@ function ItemService(opt_items) {
         items.push(item);
     };
 }
+
 angular.module('notesApp', [])
     .provider('ItemService', function() {
         var haveDefaultItems = true;
