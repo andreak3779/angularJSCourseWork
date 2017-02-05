@@ -17,7 +17,7 @@
         </div>
         <div>
             Shouting the name: {{ctrl.name | uppercase}}
-        <div>
+        </div>
         <div>
             Whispering the name: {{ctrl.name | lowercase}}
         </div>
@@ -25,8 +25,9 @@
             Start Time: {{ctrl.startTime | date:'medium'}}
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
-</script>
+    <script 
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
 <script>
 angular.module('filtersApp',[])
 .controller('FilterCtrl',[function() {
