@@ -1,3 +1,3 @@
 <script 
-src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js">
+src="https://code.angularjs.org/1.6.0/angular-route.min.js">
 </script>

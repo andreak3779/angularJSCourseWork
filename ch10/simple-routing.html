@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AngularJS Routing</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
-    </script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js">
-    </script>
+    
 </head>
 
 <body ng-app="routingApp">
@@ -18,6 +15,11 @@
         <li><a href="#/asdfgh">Nonexistent Route</a></li>
     </ul>
     <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
+    <script src="https://code.angularjs.org/1.6.0/angular-route.min.js">
+    </script>
     <script>
         angular.module('routingApp', ['ngRoute'])
             .config(['$routeProvider', function ($routeProvider) {
