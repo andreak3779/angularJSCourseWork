@@ -12,6 +12,8 @@ describe('Stock Widget Directive Rendering', function() {
     }));
 
     it('should render HTML based on scope correctly', function() {
+
+        //step 2
         var scope = rootScope.$new();
         scope.myStock = {
             name: 'Best Stock',
@@ -20,17 +22,21 @@ describe('Stock Widget Directive Rendering', function() {
         };
         scope.title = 'the best';
 
+        //step 3
         mockBackend.expectGET('stock.html').respond(
             '<div ng-bind="stockTitle"></div>' + 
             '<div ng-bind="stockData.price"></div>');
         
+        //step 4
         var element = compile('<div stock-widget' + 
         ' stock-data="myStock"' + 
         ' stock-title="This is {{title}}"></div>')(scope);
 
+        //step 5
         scope.$digest();
         mockBackend.flush();
 
+        //step 6
         expect(element.html()).toEqual(
             '<div ng-bind="stockTitle" class="ng-binding">' + 
             'This is the best' + 
